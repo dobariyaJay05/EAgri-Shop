@@ -25,7 +25,36 @@ EAgri is a web-based platform built using Python and Django, designed to facilit
 
 ## Installation
 
-### Step 1: Clone the repository
-```bash
-git clone https://github.com/dobariyaJay05/EAgri-Shop.git
-cd EAgriShop
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/eagri.git
+    cd eagri
+    ```
+
+2. **Create a virtual environment** (if only required)
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Create a superuser**
+    ```bash
+    python manage.py createsuperuser
+    ```
+    Follow the prompts to create an admin user.
+
+4. **Apply migrations**
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+5. **Run the development server**
+    ```bash
+    python manage.py runserver
+    ```
+    Open your browser and navigate to `http://127.0.0.1:8000/` to view the application.
+
+## Project Structure
+
+![WhatsApp Image 2024-06-12 at 3 30 25 PM](https://github.com/dobariyaJay05/EAgri-Shop/assets/155874428/d22285a0-6d03-4ae8-8e69-c6cabb777e34)
