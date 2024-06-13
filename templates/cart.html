@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+ <div class="customers ">
+         <div class="clients_bg">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="titlepage text_align_left">
+                         <span class="text-center">Cart Summary</span>
+                         
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+    <!-- Breadcrumb Start -->
+    {% comment %} <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-12">
+                <nav class="breadcrumb bg-light mb-30">
+                    <a class="breadcrumb-item text-dark" href="/">Home</a>
+                    <a class="breadcrumb-item text-dark" href="/shop/">Shop</a>
+                    <span class="breadcrumb-item active">Shopping Cart</span>
+                </nav>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    <!-- Breadcrumb End -->
+
+
+    <!-- Cart Start -->
+    {% if data %}
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <div class="col-lg table-responsive">
+                <table class="table table-light table-borderless table-hover text-center ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Products</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle">
+                        {% for d in data %}
+                        <tr>
+                            <td class="align-middle"><img src="{{d.p_id.pimg.url}}" alt="" style="width: 50px;">   {{d.p_id.pname}}</td>
+                            <td class="align-middle">${{d.p_id.pprice}}</td>
+                            <td class="align-middle">
+                                <div class="input-group quantity mx-auto" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <a href='/minus-cart/{{d.cid}}/' class="btn btn-sm  btn-minus" >
+                                        <i class="fa fa-minus"></i>
+                                        </a>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm  border-0 text-center" value="{{d.quantity}}">
+                                    <div class="input-group-btn">
+                                        <a href='/plus-cart/{{d.cid}}/' class="btn btn-sm  btn-plus">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle">${{d.sub_total}}</td>
+                            <td class="align-middle"><a href='/delete-cart/{{d.cid}}/' class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a></td>
+                        </tr>
+                        {% endfor %}
+                    
+                    </tbody>
+                </table>
+              
+            </div>
+            <div class="col-lg-4">
+                
+                <div class="bg-light p-30 mb-5">
+                    <div class="border-bottom pb-2">
+                        
+                    </div>
+                    <div class="pt-2">
+                        <div class="d-flex justify-content-between mt-2">
+                            <h5>Total</h5>
+                            <h5>${{g_total}}</h5>
+                        </div>
+                        <a href='/checkout/' class="btn btn-block btn-primary font-weight-bold my-3 py-3">Proceed To Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <h1 class="text-center text-uppercase mb-3">Empty Cart</h1>
+
+    {% endif %}
+
+    <!-- Cart End -->
+
+    {% endblock body %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static%}
+{% block body%}
+      <!-- contact -->
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 ">
+                  <div class="titlepage text_align_center">
+                     <span>Registration</span>
+                     <h2></h2>
+                  </div>
+               </div>
+               <div class="col-md-8 offset-md-2">
+                  <form action='/registration-agri/' id="request" class="main_form" method ='post'>
+                  {% csrf_token %}
+                     <div class="row">
+                        <div class="col-md-12 ">
+                           <input class="form_control" placeholder="UserName" type="text" name="uname"> 
+                        </div>
+                        <div class="col-md-12 ">
+                           <input class="form_control" placeholder="First Name" type="text" name="fname"> 
+                        </div>
+                        <div class="col-md-12 ">
+                           <input class="form_control" placeholder="Last Name" type="text" name="lname"> 
+                        </div>
+                        <div class="col-md-12">
+                           <input class="form_control" placeholder="Your Email" type="email" name="uemail">                          
+                        </div>
+                        <div class="col-md-12">
+                           <input class="form_control" placeholder="Password" type="password" name="upass1"> 
+                        </div>
+                         <div class="col-md-12">
+                           <input class="form_control" placeholder="Cofirm Password" type="password" name="upass2"> 
+                        </div>
+                        <div class="col-md-12">
+                           <div class="group_btn">
+                            <button class="read_more  ">Register</button>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+       
+      </div>
+{% endblock body%}
