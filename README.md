@@ -57,4 +57,5 @@ EAgri is a web-based platform built using Python and Django, designed to facilit
 
 ## Project Structure
 
-![WhatsApp Image 2024-06-12 at 3 30 25 PM](https://github.com/dobariyaJay05/EAgri-Shop/assets/155874428/d22285a0-6d03-4ae8-8e69-c6cabb777e34)
+![project-3 copy](https://github.com/dobariyaJay05/EAgri-Shop/assets/155874428/46867b9d-11cf-4312-bb99-3f83e64f3c4c)
+
